@@ -1,0 +1,81 @@
+6. Payment Instalments
+Write a program that asks the user to enter the amount of a purchase and the desired number of payment instalments.
+The program should add 5 percent to the amount to get the total purchase amount, and then divide it by the desired
+number of instalments, then display messages telling the user the total amount of the purchase and how much each
+instalment will cost.
+
+purchase = input("enter the amount of a purchase : \n")
+instalments = input("enter the desired number of payment instalments: \n")
+purchase_int = int(purchase)
+instalments_int = int(instalments)
+tax = purchase_int * 0.05
+end_price = tax + purchase_int
+per_month = end_price / instalments_int
+print("the total amount of the purchase is", end_price)
+print("the instalment cost per month is", per_month, "for",instalments,"month")
+
+
+7. Miles-per-Gallon
+A car's miles-per-gallon (MPG) can be calculated with the following formula:
+MPG 5 Miles driven 4 Gallons of gas used
+Write a program that asks the user for the number of miles driven and the gallons of gas
+used. It should calculate the car's MPG and display the result.
+
+miles = input("how many miles have you been driven: \n")
+MPG = 4 / 5
+print(MPG)
+miles_int = int(miles)
+gallons = miles_int * MPG
+print("for",miles,"miles you have been used",gallons,"gallons of gas")
+
+
+
+8. Tip, Tax, and Total
+Write a program that calculates the total amount of a meal purchased at a restaurant. The
+program should ask the user to enter the charge for the food, then calculate the amounts
+of a 18 percent tip and 7 percent sales tax. Display each of these amounts and the total.
+
+food_charge = input("please enter the total amount of a meal you have been purchased at the restaurant: \n")
+tip = int(food_charge) * 0.18
+tax = int(food_charge) * 0.07
+total = int(food_charge) + tip + tax
+print("tips:",int(tip))
+print("tax:",int(tax))
+print("total:",int(total))
+
+9. Circle Measurements
+Write a program that asks the user to enter the radius of a circle. The program should calculate
+and display the area and circumference of the circle using πr2 for the area and 2πr
+for the circumference.
+Hint: You can either use 3.14159 as the value of pi (π), or add the statement "import math"
+to the start of the program and then use "math.pi" wherever you need the value of pi in
+the program.
+
+import math
+
+radius = int(input("Enter the radius of the circle: \n"))
+area = math.pi * radius**2
+circumference = 2 * math.pi * radius
+print("The area",area)
+print("The circumference",circumference)
+
+10. Ingredient Adjuster
+A cookie recipe calls for the following ingredients:
+• 1.5 cups of sugar
+• 1 cup of butter
+• 2.75 cups of flour
+The recipe produces 48 cookies with this amount of the ingredients. Write a program that
+asks the user how many cookies he or she wants to make, then displays the number of cups
+of each ingredient needed for the specified number of cookies.
+
+
+cookies =input("inter the amount of cookies do you want to make: \n")
+
+sugar =  1.5 * int(cookies) / 48
+butter =  1 * int(cookies) / 48
+flour =  2.75 * int(cookies) / 48
+
+print("this is the ingredients for",cookies,"cookies")
+print(sugar,"cups of sugar")
+print(butter,"cups of butter")
+print(flour,"cups of flour")
