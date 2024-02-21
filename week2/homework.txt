@@ -1,0 +1,164 @@
+# Exercise 6:
+#
+# Magic Dates
+# The date June 10, 1960, is special because when it is written in the
+# following format, the month times the day equals the year:
+# 6/10/60
+# Design a program that asks the user to enter a month (in numeric form),
+# a day, and a two-digit year. The program should then determine whether
+# the month times the day equals the year. If so, it should display a
+# message saying the date is magic. Otherwise, t should display
+# a message saying the date is not magic.
+
+date = int(input("please input a date from 1-31: \n"))
+month = int(input("please input a month from 1-12: \n"))
+year = int(input("please input a two-digit year: \n"))
+
+if (month * date) == year:
+    print(f"the date {date}/{month}/{year} is special")
+else:
+    print(f"the date {date}/{month}/{year} is not special")
+
+
+# A class has two tests worth 25 points each along with a
+# main exam worth 50 points. For a student to pass the class,
+# they must obtain an overall score of at least 50 points and
+# must obtain at least 25 points in the main exam. If a student’s
+# total score is less than 50 or they obtain less than 25 points
+# in the main exam, they receive a grade of “Fail”. Otherwise,
+# their grade is as follows:
+#
+# If they get more than 80, they get a grade of “Distinction”.
+# 50–59 = “Pass”.
+# If they get less than 80 but more than 60, they get a “Credit” grade.
+# If they get less than 60, they get a “Pass” grade.
+#
+# Write a program that prompts the user to enter their points
+# for both tests and the exam and converts the values to integers.
+# The program should first check if the points entered for the tests
+# and exam are valid. If any of the test scores are not between 0 and 25,
+# or the exam score is not between 0 and 50, the program should display
+# an error message. Otherwise, the program should display the total
+# points and the grade.
+
+first_test = int(input("Please enter your first test grade between 0 and 25: \n"))
+second_test = int(input("Please enter your second test grade between 0 and 25: \n"))
+main_test = int(input("Please enter your main test grade between 0 and 50: \n"))
+
+overall_test = first_test + second_test + main_test
+
+if overall_test >= 50 and main_test >= 25:
+    if overall_test > 80:
+        print ("Distinction")
+    elif overall_test >=60 and overall_test <= 80:
+        print ("Credit")
+    elif overall_test >=50 and overall_test < 60:
+        print ("pass")
+else:
+    print("you fail")
+
+
+import math
+# Assume hot dogs come in packages of 10, and hot dog
+# buns come in packages of 8. Write a program that calculates
+# the number of packages of hot dogs and the number of packages
+# of hot dog buns needed for a cookout, with the minimum amount
+# of leftovers. The program should ask the user for the number
+# of people attending the cookout and the number of hot dogs each
+# person will be given. The program should display the following details:
+#
+# • The minimum number of packages of hot dogs required
+# • The minimum number of packages of hot dog buns required
+# • The number of hot dogs that will be left over
+# • The number of hot dog buns that will be left over
+
+people = int(input("How many people will be attending to eat hotdog: \n"))
+hotdog_each_person = int(input("How many hotdog do you wanna give for each person: \n"))
+
+one_hotdog_package = 10
+one_bun_package = 8
+
+hotdog_needed = people * hotdog_each_person
+hotdog_package_needed = math.ceil(hotdog_needed / one_hotdog_package)
+hotdog_leftover = (hotdog_package_needed * one_hotdog_package) - hotdog_needed
+
+bun_package_needed = math.ceil(hotdog_needed / one_bun_package)
+bun_leftover = (bun_package_needed * one_bun_package) - hotdog_needed
+
+print(f"the minimum number of packages of hotdogs required is {hotdog_package_needed} package")
+print(f"the minimum number of packages of hotdogs buns required is {bun_package_needed} package")
+print(f"the number of hotdogs that will be left over is {hotdog_leftover} hotdog")
+print(f"the number of hotdog buns that will be left over is {bun_leftover} buns ")
+
+
+# On a roulette wheel, the pockets are numbered from 0 to 36. The colors of the pockets are as follows:
+# •Pocket 0 is green.
+# For pockets 1 through 10, the odd-numbered pockets are red and the even-numbered pockets are black.
+# For pockets 11 through 18, the odd-numbered pockets are black and the even-numbered pockets are red.
+# For pockets 19 through 28, the odd-numbered pockets are red and the even-numbered pockets are black.
+# For pockets 29 through 36, the odd-numbered pockets are black and the even-numbered pockets are red.
+#
+# Write a program that asks the user to enter a pocket number and displays whether the pocket is green,
+# red, or black. The program should display an error message if the user enters a number that is outside
+# the range of 0 through 36.
+
+pocket_number = int(input("Enter the pocket number between 0 through 36: \n"))
+
+if pocket_number == 0:
+    print(f"the pocket number {pocket_number} is green")
+elif pocket_number >= 1 and pocket_number <= 10:
+    if pocket_number % 2 == 0:
+        print(f"the pocket number {pocket_number} is black")
+    else:
+        print(f"the pocket number {pocket_number} is red")
+elif pocket_number >= 11 and pocket_number <= 18:
+    if pocket_number % 2 == 0:
+        print(f"the pocket number {pocket_number} is red")
+    else:
+        print(f"the pocket number {pocket_number} is black")
+elif pocket_number >= 19 and pocket_number <= 28:
+    if pocket_number % 2 == 0:
+        print(f"the pocket number {pocket_number} is black")
+    else:
+        print(f"the pocket number {pocket_number} is red")
+elif pocket_number >= 29 and pocket_number <= 36:
+    if pocket_number % 2 == 0:
+        print(f"the pocket number {pocket_number} is red")
+    else:
+        print(f"the pocket number {pocket_number} is black")
+else:
+    print("invalid input please enter a number between 0 through 36")
+
+
+
+# Create a change-counting game that gets the user to enter the number of coins required to make exactly one dollar.
+# The program should prompt the user to enter the number of pennies, nickels, dimes, and quarters.
+# If the total value of the coins entered is equal to one dollar,
+# the program should congratulate the user for winning the game.
+# Otherwise, the program should display a message indicating whether
+# the amount entered was more than or less than one dollar.
+
+pennies = 1
+nickels = 5
+dimes = 10
+quarters = 25
+dollar = 100
+print("""
+this is a change-counting game
+you must count how many pennies,nickels,dimes,and quarters eqSual to one dollar
+""")
+player_pennies = int(input("How many pennies do you wanna insert: \n"))
+player_nickels = int(input("How many pennies do you wanna insert: \n"))
+player_dimes = int(input("How many pennies do you wanna insert: \n"))
+player_quarters = int(input("How many pennies do you wanna insert: \n"))
+
+player_total = (player_pennies * pennies) + (player_nickels * nickels) + (player_dimes * dimes) + (player_quarters * quarters)
+
+if player_total == dollar:
+    print("You won! that's exactly the value of 1 dollar")
+elif player_total > dollar:
+    print("You Lose! the ammount you inserted is more than the value of 1 dollar")
+else:
+    print("You Lose! the ammount you inserted is less than the value of 1 dollar")
+
+
